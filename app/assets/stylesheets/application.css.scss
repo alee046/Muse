@@ -1,0 +1,228 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body{
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Turntable_spinning.jpg) no-repeat left top;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+}
+/* miscellaneous */
+
+.jumbotron{
+  float:none;
+  opacity: 0.9;
+}
+
+/* microposts */
+
+.posts {
+  float:none;
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px;
+    border-top: 1px solid #e8e8e8;
+    min-height: 100px;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+}
+.content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+.timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+}
+.gravatar {
+    float: left;
+    margin: 0 10px;
+}
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+span.picture {
+  margin-top: 10px;
+  input {
+border: 0; }
+}
+/* forms */
+input, textarea, select, .uneditable-input {
+border: 1px solid #bbb;
+width: 25%;
+margin-bottom: 15px;
+@include box_sizing;
+}
+input {
+height: auto;
+}
+/* sidebar */
+
+aside {
+section.user_info {
+margin-top: 20px;
+}
+section {
+padding: 10px 0;
+margin-top: 20px;
+&:first-child {
+border: 0;
+padding-top: 0;
+}
+span {
+display: block;
+margin-bottom: 3px;
+line-height: 1;
+}
+h1 {
+font-size: 1.4em;
+text-align: left;
+letter-spacing: -1px;
+margin-bottom: 3px;
+margin-top: 0px;
+}
+}
+}
+.gravatar {
+float: left;
+margin-left: 50px;
+margin-right: 10px;
+}
+.gravatar_edit {
+margin-top: 15px;
+}
+//sidebar
+body {
+  padding-top: 60px;
+}
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+ .center{
+  text-align: center;
+ }
+ .center h1 {
+  margin-bottom: 10px;
+ }
+
+ /* typo */
+ h1, h2, h3, h4, h5, h6{
+  line-height : 1;
+ }
+
+ h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align:center;
+  color:white;
+ }
+ h2 {
+  font-size: 1.2 em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight:normal;
+  color: black;
+ }
+ p{
+  font-size: 1.1em;
+  line-height: 1.7em;
+ }
+
+ /* header */
+.dropdown {
+  float: right;
+}
+#logo {
+float: left;
+margin-right: 10px;
+font-size: 1.7em;
+color: white;
+text-transform: uppercase;
+letter-spacing: -1px;
+padding-top: 9px;
+font-weight: bold;
+}
+#logo:hover {
+color: white;
+text-decoration: none;
+}
+header ul {float: right;}
+header ul li {float: right;}
+
+/* footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid;
+  color:white;
+  background-color: black;
+}
+
+/*forms*/
+#error_explanation{
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+/*users*/
+.users{
+  list-style: none;
+  margin:0;
+  li{
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
+}
+.content {
+  float:none;
+  margin-left: 140px;
+}
+.user-feed {
+  color: black;
+}
+
+.user-posts {
+  opacity: 0.8;
+  background-color: white;
+}

@@ -1,0 +1,22 @@
+
+<div class="center jumbotron">
+  <ul class="user-feed posts">
+  <h2>Live-feed</h2>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to gravatar_for(post.user), post.user %>
+        <span class="user"><%= link_to post.user.user_name, post.user %></span>
+        <div class="content">
+        <span class="content"> <iframe width="100%" height="100%" src=<%= post.content %> frameborder="0" allowfullscreen></iframe></span></div>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(post.created_at) %> ago.
+          <% if current_user?(post.user) %>
+            <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+          <% end %>
+        </span>
+      </li>
+    <% end %>
+
+  </ul>
+  <%= will_paginate @posts %>
+</div>

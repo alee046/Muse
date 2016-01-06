@@ -1,0 +1,19 @@
+<ul class="user-feed posts">
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to gravatar_for(@user), @user %>
+      <span class="user"><%= link_to @user.user_name, @user %></span>
+      <div class= "content">
+      <span class="content"> <iframe width="100%" height="100%" src=<%= post.content %> frameborder="0" allowfullscreen></iframe></span></div>
+      <span class="timestamp">
+      <span class="glyphicon glyphicon-heart"></span>
+      <span class="likes"><%= post.likes.count %></span>
+      <button><%= link_to 'like', like_path(post) %></button>
+        Posted <%= time_ago_in_words(post.created_at) %> ago.
+        <% if current_user?(post.user) %>
+          <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+        <% end %>
+      </span>
+    </li>
+  <% end %>
+</ul>
