@@ -1,4 +1,4 @@
-#Shareapp
+##Muse
 
 A online repository for your favorite sets/live-performances!.
 
